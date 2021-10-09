@@ -1,0 +1,82 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4 text-light" style="margin-top: -0.6rem;">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+    aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div style="margin-bottom: -0.5rem;" class="collapse navbar-collapse" id="navbarTogglerDemo01">
+    {{!-- Logo --}}
+    <form id="material_clase_form" action="/links/material_clase" method="post">
+    <input type="hidden" name="hora" id="horas_material" value="">
+    <input type="hidden" name="dia" id="dia_material">
+        <a class="navbar-brand" type="submit" href="#"  onclick="return hora()"><svg width="110px" height="50px" version="1.1" id="Capa_1"
+        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1920px"
+        height="1080px" viewBox="0 0 1920 1080" enable-background="new 0 0 1920 1080" xml:space="preserve">
+        <path fill="none" stroke="#00A24F" stroke-width="70" stroke-linecap="round" stroke-miterlimit="10" d="M719.483,351.776
+    c-76.422,64.204-125,160.477-125,268.099c0,193.301,156.7,350,350,350c193.3,0,350-156.699,350-350
+    c0-107.622-48.578-203.895-124.999-268.099" />
+        <line fill="#079C39" stroke="#00A24F" stroke-width="70" stroke-linecap="round" stroke-miterlimit="10"
+          x1="944.483" y1="502.59" x2="944.483" y2="127.591" />
+      </svg></a>
+    </form>
+    
+    {{!-- Date/Time --}}
+    <ul class="navbar-nav ml-auto mt-5 mt-xl-0">
+      <li class="nav-item">
+        <div class="d-flex flex-row bd-highlight">
+          <div class="p-1" id="diaSemana"></div>
+          <div class="p-1" id="dia"> </div>
+          <div class="p-1"> de </div>
+          <div class="p-1" id="mes"> </div>
+          <div class="p-1"> del</div>
+          <div class="p-1" id="year"></div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <div class="d-flex flex-row bd-highlight">
+          <div class="p-1" id="horas"></div>
+          <div class="p-1">:</div>
+          <div class="p-1" id="minutos"></div>
+          <div class="p-1">:</div>
+          <div class="p-1" id="segundos"></div>
+          <div class="p-1" id="ampm">AM</div>
+        </div>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto mt-5 mt-xl-0">
+      <li class="nav-item dropleft">
+
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false" style="font-size: 1.3rem; font-weight: bold; color: white;">
+          <span class="font-weight-bold" style="font-size: 1.3rem; color: white;"><i class="fas fa-bars"></i> </span>
+          Menu
+        </a>
+        <div class="dropdown-menu rounded px-2" aria-labelledby="navbarDropdown" style="color: rgba(99, 97, 97, 0.089)">
+
+          <a class="dropdown-item mt-2" href="/links/Horario"><span style="color:#007bff; "><i
+                class="fas fa-clock mr-2"></i></span> Horario</a>
+          <a class="dropdown-item" href="/links/grupo"><span style="color: #007bff;"><i
+                class="fas fa-users mr-2"></i></span>Grupos</a>
+          <a class="dropdown-item" href="/links/no_terminados"><span style="color: #007bff;"><i
+                class="fas fa-tasks mr-2"></i></span>Pendientes</a>
+          <a class="dropdown-item" href="/links/chat_menu"><span style="color:#007bff ;"><i
+                class="fas fa-paper-plane mr-2"></i></span>Mensajes</a>
+          <a class="dropdown-item" href="/links/rendimiento"><span style="color: #007bff ;"><i
+                class="fas fa-chart-line mr-2"></i></span>Rendimiento</a>
+          <hr class="my-2">
+          <a class="dropdown-item" href="/links/perfil" class="text-decoration-none"
+            style="color: black; text-decoration: none;">
+            <span style="font-size: 1.3rem; color: #black;"> <i class="fas fa-user-cog mr-1"></i> </span>
+            {{user.nombre_usuario}}
+          </a>
+          <a class="dropdown-item mb-3" href="/links/logout" style="color: black; text-decoration: none;">
+            <span style="font-size: 1.4rem;  color: #dc3545;"> <i class="fas fa-sign-out-alt mr-2"></i></span>Cerrar
+            Sesion
+          </a>
+        </div>
+      </li>
+    </ul>
+
+
+
+  </div>
+</nav>

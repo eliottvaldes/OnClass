@@ -1,0 +1,88 @@
+<style>
+    body {
+        background-image: url('/img/bkg.svg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100%;
+    }
+</style>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-3 sticky-top">
+                <div>
+                    {{>menu}}
+                </div>
+            </div>
+            <div class="col-9">
+                <h4 class="text-center">Pendientes de clase {{clase.nombre_clase}}</h4>
+                <hr class="mb-4">
+                <div class="container mx-auto shadow-sm text-center" style="background-color: rgb(223, 223, 223);">
+                    <div class="py-3">
+                        {{#if pendientes}}
+                        {{#each pendientes}}
+                        <div class="col-12 my-3">
+                            <div class="card bg-white">
+                                <div class="card-body">
+                                    <div class="row" style="margin-top: -1rem; margin-bottom:-1rem;">
+                                        <div class="col-5 border-right" style="margin:auto auto;">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <h6>{{nombre_pendiente}}</h6>
+                                                </div>
+                                                <hr class="mx-auto my-1" style="width: 80%;">
+                                                <div class="col-12">
+                                                    <div class="row row-cols-3">
+                                                        <div class="col-6">
+                                                            <p class="font-italic">{{nombre_tipo}}</p>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <p>
+                                                                {{fecha_entrega}}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-7">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <p class="text-muted text-justify">{{desc_pendiente}}</p>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="row row-cols-2">
+                                                        <div class="col-6 mr-auto">
+                                                            <p>Pendiente {{estado_pendiente}}</p>
+                                                        </div>                                                                                                            
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {{/each}}
+                        {{else}}
+                        <div class="p-3">
+                            <h5>No tienes ningun pendiente</h5><br>
+                            <img class="rounded-circle"
+                                src="https://img.freepik.com/free-vector/no-data-concept-illustration_114360-2506.jpg?size=626&ext=jpg&ga=GA1.2.2034070519.1617321600"
+                                alt="not data found">
+                            <br>
+                            <br>
+                            <p> Crea tu primer pendiente ahora presionando <a href="../links/pendientes">aquí</a> </p>
+                        </div>
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>   
+    <br>
+    <br>
+    {{>footer}}
+
+    <script src="/js/reloj.js"></script>
+</body>

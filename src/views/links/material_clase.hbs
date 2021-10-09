@@ -1,0 +1,57 @@
+<style>
+    body {
+        background-image: url('/img/bkg.svg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100%;
+    }
+</style>
+<body>
+    
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-3 sticky-top">
+                <div>
+                    {{>menu}}
+                </div>
+            </div>
+            <div class="col-9">
+                <h4 class="text-center">Notas</h4>
+                <hr class="mb-4">
+                <div class="container mx-auto shadow-sm text-center" style="background-color: rgb(223, 223, 223);">
+                    <div class="py-3">
+                        {{#if notas}}
+                        {{#each notas}}
+                        <div>
+                            <div class="card p-2" style="width: 10rem;">
+                                <div class="card-body">
+                                    <a href="{{url_repo}}" target="_blank"><img class="card-img-top" src="{{url_repo}}"
+                                            alt="Card image cap"></a>
+                                </div>
+                            </div>
+                        </div>
+                        {{/each}}
+                        {{else}}
+                        <div class="p-3">
+                            <h5>No has creado ninguna nota</h5><br>
+                            <img class="rounded-circle"
+                                src="https://img.freepik.com/free-vector/no-data-concept-illustration_114360-2506.jpg?size=626&ext=jpg&ga=GA1.2.2034070519.1617321600"
+                                alt="not data found">
+                            <br>
+                            <br>
+                            <p> Crea tu primera nota ahora presionando <a href="clase_tomar_nota">aquí</a> </p>
+                        </div>
+
+                        {{!-- <img class="mt-3 mr-auto rounded-circle"
+                            src="https://i.pinimg.com/originals/a1/16/72/a1167211bffbc81f616db1ef850aee2d.png"
+                            alt="not data found" width="100%" height="80%"> --}}
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    {{>footer}}
+</body>
